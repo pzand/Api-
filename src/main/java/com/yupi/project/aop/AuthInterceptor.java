@@ -1,10 +1,10 @@
 package com.yupi.project.aop;
 
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+import com.pzand.apicommon.model.entity.User;
 import com.yupi.project.annotation.AuthCheck;
 import com.yupi.project.common.ErrorCode;
 import com.yupi.project.exception.BusinessException;
-import com.yupi.project.model.entity.User;
 import com.yupi.project.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -15,8 +15,8 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;

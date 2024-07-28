@@ -3,6 +3,8 @@ package com.yupi.project.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.gson.Gson;
+import com.pzand.apicommon.model.entity.InterfaceInfo;
+import com.pzand.apicommon.model.entity.User;
 import com.pzand.clinesdk.cline.ApiCline;
 import com.yupi.project.annotation.AuthCheck;
 import com.yupi.project.common.*;
@@ -12,8 +14,6 @@ import com.yupi.project.model.dto.interfaceInfo.InterfaceInfoAddRequest;
 import com.yupi.project.model.dto.interfaceInfo.InterfaceInfoInvokeRequest;
 import com.yupi.project.model.dto.interfaceInfo.InterfaceInfoQueryRequest;
 import com.yupi.project.model.dto.interfaceInfo.InterfaceInfoUpdateRequest;
-import com.yupi.project.model.entity.InterfaceInfo;
-import com.yupi.project.model.entity.User;
 import com.yupi.project.model.enums.InterfaceInfoStatusEnum;
 import com.yupi.project.service.InterfaceInfoService;
 import com.yupi.project.service.UserService;
@@ -22,8 +22,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -270,7 +270,6 @@ public class InterfaceInfoController {
      * @param request
      * @return
      */
-
     @PostMapping("/invoke")
     public BaseResponse<Object> invokeInterfaceInfo(@RequestBody InterfaceInfoInvokeRequest interfaceInfoInvokeRequest,
                                                       HttpServletRequest request) {
@@ -295,10 +294,10 @@ public class InterfaceInfoController {
         String accessKey = loginUser.getAccessKey();
         String secretKey = loginUser.getSecretKey();
         ApiCline tempClient = new ApiCline(accessKey, secretKey);
+
         Gson gson = new Gson();
         com.pzand.clinesdk.model.User user = gson.fromJson(userRequestParams, com.pzand.clinesdk.model.User.class);
         String username = tempClient.getUsernameByPost(user);
         return ResultUtils.success(username);
     }
-
 }

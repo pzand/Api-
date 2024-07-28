@@ -1,11 +1,11 @@
 package com.yupi.project.service;
 
-import com.yupi.project.model.entity.User;
+import com.pzand.apicommon.model.entity.User;
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.annotation.Resource;
 
 /**
  * 用户服务测试

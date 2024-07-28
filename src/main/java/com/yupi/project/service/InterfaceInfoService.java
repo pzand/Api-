@@ -1,7 +1,7 @@
 package com.yupi.project.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.yupi.project.model.entity.InterfaceInfo;
+import com.pzand.apicommon.model.entity.InterfaceInfo;
 
 /**
 * @author pzand

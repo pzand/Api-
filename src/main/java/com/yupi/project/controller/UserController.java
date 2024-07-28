@@ -3,21 +3,21 @@ package com.yupi.project.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.plugins.pagination.PageDTO;
+import com.pzand.apicommon.model.entity.User;
 import com.yupi.project.common.BaseResponse;
 import com.yupi.project.common.DeleteRequest;
 import com.yupi.project.common.ErrorCode;
 import com.yupi.project.common.ResultUtils;
 import com.yupi.project.exception.BusinessException;
 import com.yupi.project.model.dto.user.*;
-import com.yupi.project.model.entity.User;
 import com.yupi.project.model.vo.UserVO;
 import com.yupi.project.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.stream.Collectors;
 

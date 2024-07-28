@@ -1,10 +1,8 @@
 package com.yupi.project.service;
 
-
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.yupi.project.model.entity.User;
-
-import javax.servlet.http.HttpServletRequest;
+import com.pzand.apicommon.model.entity.User;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * 用户服务
