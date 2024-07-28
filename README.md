@@ -1,26 +1,17 @@
-# SpringBoot 项目初始模板
+# 使用
+- 修改api-backend的mysql, redis的连接地址, dubbo的注册中心地址
+- 修改api-gateway的dubbo的注册中心地址
+- 启动所有项目
 
-> Java SpringBoot 项目初始模板，整合了常用框架和示例代码，大家可以在此基础上快速开发自己的项目。
+> 不同的项目保存在不同的分支。
 
-## 模板功能
 
-- Spring Boot 2.7.0（贼新）
-- Spring MVC
-- MySQL 驱动
-- MyBatis
-- MyBatis Plus
-- Spring Session Redis 分布式登录
-- Spring AOP
-- Apache Commons Lang3 工具类
-- Lombok 注解
-- Swagger + Knife4j 接口文档
-- Spring Boot 调试工具和项目处理器
-- 全局请求响应拦截器（记录日志）
-- 全局异常处理器
-- 自定义错误码
-- 封装通用响应类
-- 示例用户注册、登录、搜索功能
-- 示例单元测试类
-- 示例 SQL（用户表）
+# 项目构成
+- **api-backend**: API开放平台的后端，用于管理统计用户，接口。
+- **api-common**: API开放平台的通用接口、Model，为Dubbo RPC远程调用而设立
+- **api-frontend**: API开放平台的前端项目，用于浏览接口，管理接口，开通接口调用权限等。
+- **api-gateway**: API网关，所有的接口调用都会通过API网关进行路由转发。API网关会统一进行用户验证，签名认证，流量染色，验证通过后会进行路由的转发
 
-访问 localhost:7529/api/doc.html 就能在线调试接口了，不需要前端配合啦~
+# 模拟接口
+- **api-interface**: 模拟接口，用于测试调用
+- **cline-sdk**: 模拟接口SDK，用于快速调用模拟接口。透明化了接口调用，无需关心API的签名认证
