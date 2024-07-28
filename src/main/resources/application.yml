@@ -1,0 +1,9 @@
+server:
+  port: 8090
+dubbo:
+  application:
+    name: dubbo-springboot-demo-consumer
+    logger: slf4j
+    qos-port: 33333
+  registry:
+    address: nacos://localhost:8848
